@@ -1,0 +1,185 @@
+/* Basic Setup and Variables */
+:root {
+    --primary-color: #007bff;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333;
+    --border-radius: 5px;
+    --priority-high: #dc3545;
+    --priority-medium: #ffc107;
+    --priority-low: #28a745;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: var(--dark-gray);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: var(--priority-high);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Task List Styling */
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item.completed .task-details p {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-details p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.task-details span {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.priority-badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--border-radius);
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.priority-High { background-color: var(--priority-high); }
+.priority-Medium { background-color: var(--priority-medium); }
+.priority-Low { background-color: var(--priority-low); }
+
+.task-actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    transition: transform 0.2s;
+}
+
+.task-actions button:hover {
+    transform: scale(1.1);
+}
+
+.btn-toggle { color: #28a745; }
+.btn-delete { color: #dc3545; }
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+    border-top: 1px solid var(--light-gray);
+    margin-top: 2rem;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+/* This is a required part of the assignment */
+@media (max-width: 600px) {
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .task-actions {
+        width: 100%;
+        text-align: right;
+        margin-top: 0.5rem;
+    }
+}
