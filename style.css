@@ -159,8 +159,6 @@ footer {
     margin-top: 2rem;
 }
 
-/* --- RESPONSIVE DESIGN --- */
-/* This is a required part of the assignment */
 @media (max-width: 600px) {
     main {
         margin: 1rem auto;
@@ -184,3 +182,4 @@ footer {
     }
 
 }
+
